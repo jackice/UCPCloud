@@ -1,0 +1,807 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testResults version="1.2">
+<httpSample t="52" it="0" lt="52" ct="5" ts="1442216321059" s="true" lb="创建文档类型" rc="200" rm="OK" tn="线程组 1-1" dt="text" de="UTF-8" by="470" sc="1" ec="0" ng="1" na="1" hn="XQL-PC">
+  <assertionResult>
+    <name>acknowledged</name>
+    <failure>false</failure>
+    <error>false</error>
+    <failureMessage></failureMessage>
+  </assertionResult>
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST,GET,OPTIONS,DELETE,PATCH,MERGE
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: x-requested-with
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: JSESSIONID=5E2666A5969863F043502FCCA0517851; Path=/; HttpOnly
+Content-Type: application/json;charset=UTF-8
+Content-Length: 21
+Date: Mon, 14 Sep 2015 07:38:41 GMT
+Connection: close
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: close
+Content-Type: application/json
+Content-Length: 790
+Host: localhost:8080
+User-Agent: Apache-HttpClient/4.2.6 (java 1.5)
+Authorization: Basic YWRtaW46MTIzNDU2
+</requestHeader>
+  <responseData class="java.lang.String">{&quot;acknowledged&quot;:true}</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">{&#xd;
+	&quot;name&quot;: &quot;jmtest&quot;,&#xd;
+	&quot;displayName&quot;: &quot;jmtest_name&quot;,&#xd;
+	&quot;description&quot;: &quot;jmtest_description&quot;,&#xd;
+	&quot;properties&quot;: [{&#xd;
+		&quot;name&quot;: &quot;aaa&quot;,&#xd;
+		&quot;type&quot;: &quot;string&quot;,&#xd;
+		&quot;pattern&quot;: &quot;&quot;,&#xd;
+		&quot;promptMessage&quot;: &quot;&quot;,&#xd;
+		&quot;index&quot;: &quot;not_analyzed&quot;,&#xd;
+		&quot;defaultValue&quot;: &quot;&quot;,&#xd;
+		&quot;indexAnalyzer&quot;: &quot;&quot;,&#xd;
+		&quot;searchAnalyzer&quot;: &quot;&quot;,&#xd;
+		&quot;required&quot;: false,&#xd;
+		&quot;order&quot;: 3&#xd;
+	},&#xd;
+	{&#xd;
+		&quot;name&quot;: &quot;bbb&quot;,&#xd;
+		&quot;type&quot;: &quot;integer&quot;,&#xd;
+		&quot;pattern&quot;: &quot;&quot;,&#xd;
+		&quot;promptMessage&quot;: &quot;&quot;,&#xd;
+		&quot;index&quot;: &quot;not_analyzed&quot;,&#xd;
+		&quot;defaultValue&quot;: &quot;&quot;,&#xd;
+		&quot;indexAnalyzer&quot;: &quot;&quot;,&#xd;
+		&quot;searchAnalyzer&quot;: &quot;&quot;,&#xd;
+		&quot;required&quot;: false,&#xd;
+		&quot;order&quot;: 2&#xd;
+	},&#xd;
+	{&#xd;
+		&quot;name&quot;: &quot;ccc&quot;,&#xd;
+		&quot;type&quot;: &quot;boolean&quot;,&#xd;
+		&quot;pattern&quot;: &quot;&quot;,&#xd;
+		&quot;promptMessage&quot;: &quot;&quot;,&#xd;
+		&quot;index&quot;: &quot;not_analyzed&quot;,&#xd;
+		&quot;defaultValue&quot;: &quot;&quot;,&#xd;
+		&quot;indexAnalyzer&quot;: &quot;&quot;,&#xd;
+		&quot;searchAnalyzer&quot;: &quot;&quot;,&#xd;
+		&quot;required&quot;: false,&#xd;
+		&quot;order&quot;: 1&#xd;
+	}]&#xd;
+}</queryString>
+  <java.net.URL>http://localhost:8080/svc/types</java.net.URL>
+</httpSample>
+<httpSample t="15" it="0" lt="15" ct="4" ts="1442216321124" s="true" lb="获取所有文档类型" rc="200" rm="OK" tn="线程组 1-1" dt="text" de="UTF-8" by="611" sc="1" ec="0" ng="1" na="1" hn="XQL-PC">
+  <assertionResult>
+    <name>documentTypes</name>
+    <failure>false</failure>
+    <error>false</error>
+    <failureMessage></failureMessage>
+  </assertionResult>
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST,GET,OPTIONS,DELETE,PATCH,MERGE
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: x-requested-with
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: JSESSIONID=35C385E492E04651170B18F641B41D38; Path=/; HttpOnly
+Content-Type: application/json;charset=UTF-8
+Content-Length: 161
+Date: Mon, 14 Sep 2015 07:38:41 GMT
+Connection: close
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: close
+Content-Type: application/json
+Host: localhost:8080
+User-Agent: Apache-HttpClient/4.2.6 (java 1.5)
+Authorization: Basic YWRtaW46MTIzNDU2
+</requestHeader>
+  <responseData class="java.lang.String">{&quot;documentTypes&quot;:[{&quot;name&quot;:&quot;testy&quot;,&quot;displayName&quot;:&quot;testy&quot;,&quot;description&quot;:&quot;testy&quot;},{&quot;name&quot;:&quot;jmtest&quot;,&quot;displayName&quot;:&quot;jmtest_name&quot;,&quot;description&quot;:&quot;jmtest_description&quot;}]}</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://localhost:8080/svc/types</java.net.URL>
+</httpSample>
+<httpSample t="20" it="0" lt="20" ct="5" ts="1442216321141" s="true" lb="获取文档类型" rc="200" rm="OK" tn="线程组 1-1" dt="text" de="UTF-8" by="984" sc="1" ec="0" ng="1" na="1" hn="XQL-PC">
+  <assertionResult>
+    <name>properties</name>
+    <failure>false</failure>
+    <error>false</error>
+    <failureMessage></failureMessage>
+  </assertionResult>
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST,GET,OPTIONS,DELETE,PATCH,MERGE
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: x-requested-with
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: JSESSIONID=49F2C696B217CC8159269289C9AF558B; Path=/; HttpOnly
+Content-Type: application/json;charset=UTF-8
+Content-Length: 534
+Date: Mon, 14 Sep 2015 07:38:41 GMT
+Connection: close
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: close
+Content-Type: application/json
+Host: localhost:8080
+User-Agent: Apache-HttpClient/4.2.6 (java 1.5)
+Authorization: Basic YWRtaW46MTIzNDU2
+</requestHeader>
+  <responseData class="java.lang.String">{&quot;properties&quot;:[{&quot;name&quot;:&quot;aaa&quot;,&quot;type&quot;:&quot;string&quot;,&quot;index&quot;:&quot;not_analyzed&quot;,&quot;indexAnalyzer&quot;:&quot;&quot;,&quot;searchAnalyzer&quot;:&quot;&quot;,&quot;required&quot;:false,&quot;defaultValue&quot;:&quot;&quot;,&quot;pattern&quot;:&quot;&quot;,&quot;promptMessage&quot;:&quot;&quot;,&quot;order&quot;:&quot;3&quot;},{&quot;name&quot;:&quot;bbb&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;index&quot;:&quot;not_analyzed&quot;,&quot;indexAnalyzer&quot;:&quot;&quot;,&quot;searchAnalyzer&quot;:&quot;&quot;,&quot;required&quot;:false,&quot;defaultValue&quot;:&quot;&quot;,&quot;pattern&quot;:&quot;&quot;,&quot;promptMessage&quot;:&quot;&quot;,&quot;order&quot;:&quot;2&quot;},{&quot;name&quot;:&quot;ccc&quot;,&quot;type&quot;:&quot;boolean&quot;,&quot;index&quot;:&quot;not_analyzed&quot;,&quot;indexAnalyzer&quot;:&quot;&quot;,&quot;searchAnalyzer&quot;:&quot;&quot;,&quot;required&quot;:false,&quot;defaultValue&quot;:&quot;&quot;,&quot;pattern&quot;:&quot;&quot;,&quot;promptMessage&quot;:&quot;&quot;,&quot;order&quot;:&quot;1&quot;}]}</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://localhost:8080/svc/types/jmtest</java.net.URL>
+</httpSample>
+<httpSample t="42" it="0" lt="42" ct="6" ts="1442216321162" s="true" lb="修改文档类型" rc="200" rm="OK" tn="线程组 1-1" dt="text" de="UTF-8" by="470" sc="1" ec="0" ng="1" na="1" hn="XQL-PC">
+  <assertionResult>
+    <name>acknowledged</name>
+    <failure>false</failure>
+    <error>false</error>
+    <failureMessage></failureMessage>
+  </assertionResult>
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST,GET,OPTIONS,DELETE,PATCH,MERGE
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: x-requested-with
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: JSESSIONID=76E29462A9AB9E69E3FB80E1EEA34D47; Path=/; HttpOnly
+Content-Type: application/json;charset=UTF-8
+Content-Length: 21
+Date: Mon, 14 Sep 2015 07:38:41 GMT
+Connection: close
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: close
+Content-Type: application/json
+Content-Length: 1013
+Host: localhost:8080
+User-Agent: Apache-HttpClient/4.2.6 (java 1.5)
+Authorization: Basic YWRtaW46MTIzNDU2
+</requestHeader>
+  <responseData class="java.lang.String">{&quot;acknowledged&quot;:true}</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">PUT</method>
+  <queryString class="java.lang.String">{&#xd;
+	&quot;name&quot;: &quot;jmtest&quot;,&#xd;
+	&quot;displayName&quot;: &quot;jmtest_name&quot;,&#xd;
+	&quot;description&quot;: &quot;jmtest_description&quot;,&#xd;
+	&quot;properties&quot;: [{&#xd;
+		&quot;name&quot;: &quot;aaa&quot;,&#xd;
+		&quot;type&quot;: &quot;string&quot;,&#xd;
+		&quot;pattern&quot;: &quot;&quot;,&#xd;
+		&quot;promptMessage&quot;: &quot;&quot;,&#xd;
+		&quot;index&quot;: &quot;not_analyzed&quot;,&#xd;
+		&quot;defaultValue&quot;: &quot;&quot;,&#xd;
+		&quot;indexAnalyzer&quot;: &quot;&quot;,&#xd;
+		&quot;searchAnalyzer&quot;: &quot;&quot;,&#xd;
+		&quot;required&quot;: false,&#xd;
+		&quot;order&quot;: 3&#xd;
+	},&#xd;
+	{&#xd;
+		&quot;name&quot;: &quot;bbb&quot;,&#xd;
+		&quot;type&quot;: &quot;integer&quot;,&#xd;
+		&quot;pattern&quot;: &quot;&quot;,&#xd;
+		&quot;promptMessage&quot;: &quot;&quot;,&#xd;
+		&quot;index&quot;: &quot;not_analyzed&quot;,&#xd;
+		&quot;defaultValue&quot;: &quot;&quot;,&#xd;
+		&quot;indexAnalyzer&quot;: &quot;&quot;,&#xd;
+		&quot;searchAnalyzer&quot;: &quot;&quot;,&#xd;
+		&quot;required&quot;: false,&#xd;
+		&quot;order&quot;: 2&#xd;
+	},&#xd;
+	{&#xd;
+		&quot;name&quot;: &quot;ccc&quot;,&#xd;
+		&quot;type&quot;: &quot;boolean&quot;,&#xd;
+		&quot;pattern&quot;: &quot;&quot;,&#xd;
+		&quot;promptMessage&quot;: &quot;&quot;,&#xd;
+		&quot;index&quot;: &quot;not_analyzed&quot;,&#xd;
+		&quot;defaultValue&quot;: &quot;&quot;,&#xd;
+		&quot;indexAnalyzer&quot;: &quot;&quot;,&#xd;
+		&quot;searchAnalyzer&quot;: &quot;&quot;,&#xd;
+		&quot;required&quot;: false,&#xd;
+		&quot;order&quot;: 1&#xd;
+	},{&#xd;
+		&quot;name&quot;: &quot;ddd&quot;,&#xd;
+		&quot;type&quot;: &quot;string&quot;,&#xd;
+		&quot;pattern&quot;: &quot;&quot;,&#xd;
+		&quot;promptMessage&quot;: &quot;&quot;,&#xd;
+		&quot;index&quot;: &quot;not_analyzed&quot;,&#xd;
+		&quot;defaultValue&quot;: &quot;&quot;,&#xd;
+		&quot;indexAnalyzer&quot;: &quot;&quot;,&#xd;
+		&quot;searchAnalyzer&quot;: &quot;&quot;,&#xd;
+		&quot;required&quot;: false,&#xd;
+		&quot;order&quot;: 4&#xd;
+	}]&#xd;
+}</queryString>
+  <java.net.URL>http://localhost:8080/svc/types/jmtest</java.net.URL>
+</httpSample>
+<httpSample t="157" it="0" lt="157" ct="10" ts="1442216321206" s="true" lb="创建文档_流" rc="200" rm="OK" tn="线程组 1-1" dt="text" de="UTF-8" by="539" sc="1" ec="0" ng="1" na="1" hn="XQL-PC">
+  <assertionResult>
+    <name>_created</name>
+    <failure>false</failure>
+    <error>false</error>
+    <failureMessage></failureMessage>
+  </assertionResult>
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST,GET,OPTIONS,DELETE,PATCH,MERGE
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: x-requested-with
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: JSESSIONID=F493AEAABCD03F4D1EC689E80A5E8F6C; Path=/; HttpOnly
+Content-Type: application/json;charset=UTF-8
+Content-Length: 90
+Date: Mon, 14 Sep 2015 07:38:41 GMT
+Connection: close
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: close
+Content-Length: 1121
+Content-Type: multipart/form-data; boundary=wEL91a7wsG_lEC1kaPRLa9GR9cNQFkl
+Host: localhost:8080
+User-Agent: Apache-HttpClient/4.2.6 (java 1.5)
+Authorization: Basic YWRtaW46MTIzNDU2
+</requestHeader>
+  <responseData class="java.lang.String">{&quot;_index&quot;:&quot;yy&quot;,&quot;_type&quot;:&quot;jmtest&quot;,&quot;_id&quot;:&quot;AU_KzN73jubKdypdH3Du&quot;,&quot;_version&quot;:1,&quot;_created&quot;:true}</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">--wEL91a7wsG_lEC1kaPRLa9GR9cNQFkl&#xd;
+Content-Disposition: form-data; name=&quot;aaa&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+test123456&#xd;
+--wEL91a7wsG_lEC1kaPRLa9GR9cNQFkl&#xd;
+Content-Disposition: form-data; name=&quot;bbb&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+567&#xd;
+--wEL91a7wsG_lEC1kaPRLa9GR9cNQFkl&#xd;
+Content-Disposition: form-data; name=&quot;ccc&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+true&#xd;
+--wEL91a7wsG_lEC1kaPRLa9GR9cNQFkl&#xd;
+Content-Disposition: form-data; name=&quot;name&quot;&#xd;
+Content-Type: text/plain; charset=US-ASCII&#xd;
+Content-Transfer-Encoding: 8bit&#xd;
+&#xd;
+????&#xd;
+--wEL91a7wsG_lEC1kaPRLa9GR9cNQFkl&#xd;
+Content-Disposition: form-data; name=&quot;stream&quot;; filename=&quot;banner.txt&quot;&#xd;
+Content-Type: &#xd;
+Content-Transfer-Encoding: binary&#xd;
+&#xd;
+&lt;actual file content, not shown here&gt;&#xd;
+--wEL91a7wsG_lEC1kaPRLa9GR9cNQFkl--&#xd;
+</queryString>
+  <java.net.URL>http://localhost:8080/svc/jmtest</java.net.URL>
+</httpSample>
+<httpSample t="23" it="0" lt="23" ct="5" ts="1442216321365" s="true" lb="创建文档" rc="200" rm="OK" tn="线程组 1-1" dt="text" de="UTF-8" by="539" sc="1" ec="0" ng="1" na="1" hn="XQL-PC">
+  <assertionResult>
+    <name>_created</name>
+    <failure>false</failure>
+    <error>false</error>
+    <failureMessage></failureMessage>
+  </assertionResult>
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST,GET,OPTIONS,DELETE,PATCH,MERGE
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: x-requested-with
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: JSESSIONID=6484EC42E1E75CF9CB702F630A4AFA57; Path=/; HttpOnly
+Content-Type: application/json;charset=UTF-8
+Content-Length: 90
+Date: Mon, 14 Sep 2015 07:38:41 GMT
+Connection: close
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: close
+Content-Type: application/json
+Content-Length: 47
+Host: localhost:8080
+User-Agent: Apache-HttpClient/4.2.6 (java 1.5)
+Authorization: Basic YWRtaW46MTIzNDU2
+</requestHeader>
+  <responseData class="java.lang.String">{&quot;_index&quot;:&quot;yy&quot;,&quot;_type&quot;:&quot;jmtest&quot;,&quot;_id&quot;:&quot;AU_KzN8WjubKdypdH3Dw&quot;,&quot;_version&quot;:1,&quot;_created&quot;:true}</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">{&#xd;
+&quot;aaa&quot;:&quot;zbc&quot;,&#xd;
+&quot;name&quot;:&quot;没有流的文档&quot;&#xd;
+}</queryString>
+  <java.net.URL>http://localhost:8080/svc/jmtest</java.net.URL>
+</httpSample>
+<httpSample t="13" it="0" lt="13" ct="6" ts="1442216321391" s="true" lb="获取文档" rc="200" rm="OK" tn="线程组 1-1" dt="text" de="UTF-8" by="758" sc="1" ec="0" ng="1" na="1" hn="XQL-PC">
+  <assertionResult>
+    <name>acknowledged</name>
+    <failure>false</failure>
+    <error>false</error>
+    <failureMessage></failureMessage>
+  </assertionResult>
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST,GET,OPTIONS,DELETE,PATCH,MERGE
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: x-requested-with
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: JSESSIONID=CF026B58150EA5FFB030AEA0B72D5171; Path=/; HttpOnly
+Content-Type: application/json;charset=UTF-8
+Content-Length: 308
+Date: Mon, 14 Sep 2015 07:38:41 GMT
+Connection: close
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: close
+Host: localhost:8080
+User-Agent: Apache-HttpClient/4.2.6 (java 1.5)
+Authorization: Basic YWRtaW46MTIzNDU2
+</requestHeader>
+  <responseData class="java.lang.String">{&quot;aaa&quot;:&quot;zbc&quot;,&quot;lastUpdatedBy&quot;:&quot;admin&quot;,&quot;_index&quot;:&quot;yy&quot;,&quot;createdBy&quot;:&quot;admin&quot;,&quot;_acl&quot;:[{&quot;permission&quot;:[&quot;read&quot;,&quot;write&quot;],&quot;user&quot;:&quot;admin&quot;}],&quot;_type&quot;:&quot;jmtest&quot;,&quot;name&quot;:&quot;没有流的文档&quot;,&quot;lastUpdatedOn&quot;:&quot;2015-09-14T15:38:41.382&quot;,&quot;_id&quot;:&quot;AU_KzN8WjubKdypdH3Dw&quot;,&quot;_version&quot;:1,&quot;createdOn&quot;:&quot;2015-09-14T15:38:41.382&quot;,&quot;_found&quot;:true}</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://localhost:8080/svc/jmtest/AU_KzN8WjubKdypdH3Dw</java.net.URL>
+</httpSample>
+<httpSample t="12" it="0" lt="12" ct="5" ts="1442216321408" s="true" lb="获取文档_流_元数据" rc="200" rm="OK" tn="线程组 1-1" dt="text" de="UTF-8" by="579" sc="1" ec="0" ng="1" na="1" hn="XQL-PC">
+  <assertionResult>
+    <name>streamId</name>
+    <failure>false</failure>
+    <error>false</error>
+    <failureMessage></failureMessage>
+  </assertionResult>
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST,GET,OPTIONS,DELETE,PATCH,MERGE
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: x-requested-with
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: JSESSIONID=600A6FD319E03090FCB249152556B0EE; Path=/; HttpOnly
+Content-Type: application/json;charset=UTF-8
+Content-Length: 129
+Date: Mon, 14 Sep 2015 07:38:41 GMT
+Connection: close
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: close
+Host: localhost:8080
+User-Agent: Apache-HttpClient/4.2.6 (java 1.5)
+Authorization: Basic YWRtaW46MTIzNDU2
+</requestHeader>
+  <responseData class="java.lang.String">[{&quot;streamId&quot;:&quot;TE9TRl9MaWxhbmRyYSBOZXJhbWFuaV8xNDQyMjE0OTk0MTUzLDQxOTIsMjYy&quot;,&quot;length&quot;:262,&quot;streamName&quot;:&quot;stream&quot;,&quot;contentType&quot;:&quot;&quot;}]</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://localhost:8080/svc/jmtest/AU_KzN73jubKdypdH3Du/_streams</java.net.URL>
+</httpSample>
+<httpSample t="27" it="0" lt="27" ct="4" ts="1442216321430" s="true" lb="获取文档_流" rc="200" rm="OK" tn="线程组 1-1" dt="text" de="UTF-8" by="696" sc="1" ec="0" ng="1" na="1" hn="XQL-PC">
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST,GET,OPTIONS,DELETE,PATCH,MERGE
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: x-requested-with
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: JSESSIONID=84724CA941C19FA1F63FC3B86311EFC5; Path=/; HttpOnly
+Content-Type: ;charset=UTF-8
+Content-Length: 262
+Date: Mon, 14 Sep 2015 07:38:41 GMT
+Connection: close
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: close
+Host: localhost:8080
+User-Agent: Apache-HttpClient/4.2.6 (java 1.5)
+Authorization: Basic YWRtaW46MTIzNDU2
+</requestHeader>
+  <responseData class="java.lang.String">        ____            _             _&#xd;
+ _   _ / ___|___  _ __ | |_ ___ _ __ | |_&#xd;
+| | | | |   / _ \| &apos;_ \| __/ _ \ &apos;_ \| __|&#xd;
+| |_| | |__| (_) | | | | ||  __/ | | | |_&#xd;
+ \__,_|\____\___/|_| |_|\__\___|_| |_|\__|&#xd;
+  :: Nikoyo uContent ::        (v8.0.0.RELEASE)</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://localhost:8080/svc/jmtest/AU_KzN73jubKdypdH3Du/_streams/TE9TRl9MaWxhbmRyYSBOZXJhbWFuaV8xNDQyMjE0OTk0MTUzLDQxOTIsMjYy?accept=image/jpeg</java.net.URL>
+</httpSample>
+<httpSample t="34" it="0" lt="33" ct="6" ts="1442216321458" s="true" lb="查询文档" rc="200" rm="OK" tn="线程组 1-1" dt="text" de="UTF-8" by="475" sc="1" ec="0" ng="1" na="1" hn="XQL-PC">
+  <assertionResult>
+    <name>total</name>
+    <failure>false</failure>
+    <error>false</error>
+    <failureMessage></failureMessage>
+  </assertionResult>
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST,GET,OPTIONS,DELETE,PATCH,MERGE
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: x-requested-with
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: JSESSIONID=03814B96C91DAE8B35314C06405AE605; Path=/; HttpOnly
+Content-Type: application/json;charset=UTF-8
+Content-Length: 26
+Date: Mon, 14 Sep 2015 07:38:41 GMT
+Connection: close
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: close
+Content-Type: application/json
+Host: localhost:8080
+User-Agent: Apache-HttpClient/4.2.6 (java 1.5)
+Authorization: Basic YWRtaW46MTIzNDU2
+</requestHeader>
+  <responseData class="java.lang.String">{&quot;total&quot;:0,&quot;documents&quot;:[]}</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://localhost:8080/svc/jmtest</java.net.URL>
+</httpSample>
+<httpSample t="17" it="0" lt="17" ct="7" ts="1442216321493" s="true" lb="删除文档" rc="200" rm="OK" tn="线程组 1-1" dt="text" de="UTF-8" by="537" sc="1" ec="0" ng="1" na="1" hn="XQL-PC">
+  <assertionResult>
+    <name>_found</name>
+    <failure>false</failure>
+    <error>false</error>
+    <failureMessage></failureMessage>
+  </assertionResult>
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST,GET,OPTIONS,DELETE,PATCH,MERGE
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: x-requested-with
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: JSESSIONID=5C24A5DF89D207590B165C410FFFF26A; Path=/; HttpOnly
+Content-Type: application/json;charset=UTF-8
+Content-Length: 88
+Date: Mon, 14 Sep 2015 07:38:41 GMT
+Connection: close
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: close
+Content-Length: 0
+Content-Type: text/plain; charset=UTF-8
+Host: localhost:8080
+User-Agent: Apache-HttpClient/4.2.6 (java 1.5)
+Authorization: Basic YWRtaW46MTIzNDU2
+</requestHeader>
+  <responseData class="java.lang.String">{&quot;_index&quot;:&quot;yy&quot;,&quot;_type&quot;:&quot;jmtest&quot;,&quot;_id&quot;:&quot;AU_KzN8WjubKdypdH3Dw&quot;,&quot;_version&quot;:2,&quot;_found&quot;:true}</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">DELETE</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://localhost:8080/svc/jmtest/AU_KzN8WjubKdypdH3Dw</java.net.URL>
+</httpSample>
+<httpSample t="35" it="0" lt="35" ct="12" ts="1442216321512" s="true" lb="创建组" rc="200" rm="OK" tn="线程组 1-1" dt="text" de="UTF-8" by="523" sc="1" ec="0" ng="1" na="1" hn="XQL-PC">
+  <assertionResult>
+    <name>created</name>
+    <failure>false</failure>
+    <error>false</error>
+    <failureMessage></failureMessage>
+  </assertionResult>
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST,GET,OPTIONS,DELETE,PATCH,MERGE
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: x-requested-with
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: JSESSIONID=8751598539C69DFD8717CB8381B08AAE; Path=/; HttpOnly
+Content-Type: application/json;charset=UTF-8
+Content-Length: 74
+Date: Mon, 14 Sep 2015 07:38:41 GMT
+Connection: close
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: close
+Content-Type: application/json
+Content-Length: 54
+Host: localhost:8080
+User-Agent: Apache-HttpClient/4.2.6 (java 1.5)
+Authorization: Basic YWRtaW46MTIzNDU2
+</requestHeader>
+  <responseData class="java.lang.String">{&quot;_index&quot;:&quot;yy&quot;,&quot;_type&quot;:&quot;group&quot;,&quot;_id&quot;:&quot;testg&quot;,&quot;_version&quot;:19,&quot;created&quot;:true}</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">{&#xd;
+	&quot;groupId&quot;: &quot;testg&quot;,&#xd;
+	&quot;groupName&quot;: &quot;testgname&quot;	&#xd;
+}</queryString>
+  <java.net.URL>http://localhost:8080/svc/groups</java.net.URL>
+</httpSample>
+<httpSample t="17" it="0" lt="17" ct="5" ts="1442216321549" s="true" lb="创建用户" rc="200" rm="OK" tn="线程组 1-1" dt="text" de="UTF-8" by="527" sc="1" ec="0" ng="1" na="1" hn="XQL-PC">
+  <assertionResult>
+    <name>created</name>
+    <failure>false</failure>
+    <error>false</error>
+    <failureMessage></failureMessage>
+  </assertionResult>
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST,GET,OPTIONS,DELETE,PATCH,MERGE
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: x-requested-with
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: JSESSIONID=80A185741559735DA0869E1B5E7EE379; Path=/; HttpOnly
+Content-Type: application/json;charset=UTF-8
+Content-Length: 78
+Date: Mon, 14 Sep 2015 07:38:41 GMT
+Connection: close
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: close
+Content-Type: application/json
+Content-Length: 117
+Host: localhost:8080
+User-Agent: Apache-HttpClient/4.2.6 (java 1.5)
+Authorization: Basic YWRtaW46MTIzNDU2
+</requestHeader>
+  <responseData class="java.lang.String">{&quot;_index&quot;:&quot;yy&quot;,&quot;_type&quot;:&quot;user&quot;,&quot;_id&quot;:&quot;wangshushu&quot;,&quot;_version&quot;:19,&quot;created&quot;:true}</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">POST</method>
+  <queryString class="java.lang.String">{&#xd;
+	&quot;userId&quot;: &quot;wangshushu&quot;,&#xd;
+	&quot;userName&quot;: &quot;王叔叔&quot;,&#xd;
+	&quot;email&quot;: &quot;wangshushu@caoliu.com&quot;,&#xd;
+	&quot;password&quot;: &quot;123456&quot;	&#xd;
+}</queryString>
+  <java.net.URL>http://localhost:8080/svc/users</java.net.URL>
+</httpSample>
+<httpSample t="21" it="0" lt="21" ct="5" ts="1442216321568" s="true" lb="组添加用户" rc="200" rm="OK" tn="线程组 1-1" dt="text" de="UTF-8" by="527" sc="1" ec="0" ng="1" na="1" hn="XQL-PC">
+  <assertionResult>
+    <name>created</name>
+    <failure>false</failure>
+    <error>false</error>
+    <failureMessage></failureMessage>
+  </assertionResult>
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST,GET,OPTIONS,DELETE,PATCH,MERGE
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: x-requested-with
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: JSESSIONID=993A6764726C10C1760454FA74321E0F; Path=/; HttpOnly
+Content-Type: application/json;charset=UTF-8
+Content-Length: 78
+Date: Mon, 14 Sep 2015 07:38:41 GMT
+Connection: close
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: close
+Content-Type: application/json
+Content-Length: 24
+Host: localhost:8080
+User-Agent: Apache-HttpClient/4.2.6 (java 1.5)
+Authorization: Basic YWRtaW46MTIzNDU2
+</requestHeader>
+  <responseData class="java.lang.String">{&quot;_index&quot;:&quot;yy&quot;,&quot;_type&quot;:&quot;group&quot;,&quot;_id&quot;:&quot;testg&quot;,&quot;_version&quot;:20,&quot;_isCreated&quot;:false}</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">PATCH</method>
+  <queryString class="java.lang.String">{&quot;users&quot;:[&quot;wangshushu&quot;]}</queryString>
+  <java.net.URL>http://localhost:8080/svc/groups/testg</java.net.URL>
+</httpSample>
+<httpSample t="49" it="0" lt="49" ct="8" ts="1442216321591" s="true" lb="获取用户" rc="200" rm="OK" tn="线程组 1-1" dt="text" de="UTF-8" by="668" sc="1" ec="0" ng="1" na="1" hn="XQL-PC">
+  <assertionResult>
+    <name>created</name>
+    <failure>false</failure>
+    <error>false</error>
+    <failureMessage></failureMessage>
+  </assertionResult>
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST,GET,OPTIONS,DELETE,PATCH,MERGE
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: x-requested-with
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: JSESSIONID=636EC3261AD20F4D5E870B5341FF30C3; Path=/; HttpOnly
+Content-Type: application/json;charset=UTF-8
+Content-Length: 218
+Date: Mon, 14 Sep 2015 07:38:41 GMT
+Connection: close
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: close
+Content-Type: application/json
+Host: localhost:8080
+User-Agent: Apache-HttpClient/4.2.6 (java 1.5)
+Authorization: Basic YWRtaW46MTIzNDU2
+</requestHeader>
+  <responseData class="java.lang.String">{&quot;lastUpdatedBy&quot;:null,&quot;password&quot;:&quot;123456&quot;,&quot;createdBy&quot;:&quot;admin&quot;,&quot;lastUpdatedOn&quot;:null,&quot;_id&quot;:&quot;wangshushu&quot;,&quot;userName&quot;:&quot;王叔叔&quot;,&quot;userId&quot;:&quot;wangshushu&quot;,&quot;createdOn&quot;:&quot;2015-09-14T07:38:41.561Z&quot;,&quot;email&quot;:&quot;wangshushu@caoliu.com&quot;}</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://localhost:8080/svc/users/wangshushu</java.net.URL>
+</httpSample>
+<httpSample t="28" it="0" lt="28" ct="6" ts="1442216321642" s="true" lb="修改用户" rc="200" rm="OK" tn="线程组 1-1" dt="text" de="UTF-8" by="531" sc="1" ec="0" ng="1" na="1" hn="XQL-PC">
+  <assertionResult>
+    <name>created</name>
+    <failure>false</failure>
+    <error>false</error>
+    <failureMessage></failureMessage>
+  </assertionResult>
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST,GET,OPTIONS,DELETE,PATCH,MERGE
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: x-requested-with
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: JSESSIONID=DB069C38FE23E8F5E81CDC2F6A513533; Path=/; HttpOnly
+Content-Type: application/json;charset=UTF-8
+Content-Length: 82
+Date: Mon, 14 Sep 2015 07:38:41 GMT
+Connection: close
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: close
+Content-Type: application/json
+Content-Length: 28
+Host: localhost:8080
+User-Agent: Apache-HttpClient/4.2.6 (java 1.5)
+Authorization: Basic YWRtaW46MTIzNDU2
+</requestHeader>
+  <responseData class="java.lang.String">{&quot;_index&quot;:&quot;yy&quot;,&quot;_type&quot;:&quot;user&quot;,&quot;_id&quot;:&quot;wangshushu&quot;,&quot;_version&quot;:20,&quot;_isCreated&quot;:false}</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">PATCH</method>
+  <queryString class="java.lang.String">{	&#xd;
+	&quot;userName&quot;: &quot;叔叔&quot;&#xd;
+}</queryString>
+  <java.net.URL>http://localhost:8080/svc/users/wangshushu</java.net.URL>
+</httpSample>
+<httpSample t="61" it="0" lt="60" ct="6" ts="1442216321683" s="true" lb="查询用户" rc="200" rm="OK" tn="线程组 1-1" dt="text" de="UTF-8" by="471" sc="1" ec="0" ng="1" na="1" hn="XQL-PC">
+  <assertionResult>
+    <name>created</name>
+    <failure>false</failure>
+    <error>false</error>
+    <failureMessage></failureMessage>
+  </assertionResult>
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST,GET,OPTIONS,DELETE,PATCH,MERGE
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: x-requested-with
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: JSESSIONID=9D590C82FF2AB9EFD1B9EBBF00553D5A; Path=/; HttpOnly
+Content-Type: application/json;charset=UTF-8
+Content-Length: 22
+Date: Mon, 14 Sep 2015 07:38:41 GMT
+Connection: close
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: close
+Content-Type: application/json
+Host: localhost:8080
+User-Agent: Apache-HttpClient/4.2.6 (java 1.5)
+Authorization: Basic YWRtaW46MTIzNDU2
+</requestHeader>
+  <responseData class="java.lang.String">{&quot;total&quot;:0,&quot;users&quot;:[]}</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">GET</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://localhost:8080/svc/users?query=%7B%22term%22%3A+%7B%22userName%22%3A+%22%E5%8F%94%E5%8F%94%22%7D%7D</java.net.URL>
+</httpSample>
+<httpSample t="17" it="0" lt="17" ct="5" ts="1442216321745" s="true" lb="删除组" rc="200" rm="OK" tn="线程组 1-1" dt="text" de="UTF-8" by="521" sc="1" ec="0" ng="1" na="1" hn="XQL-PC">
+  <assertionResult>
+    <name>found</name>
+    <failure>false</failure>
+    <error>false</error>
+    <failureMessage></failureMessage>
+  </assertionResult>
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST,GET,OPTIONS,DELETE,PATCH,MERGE
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: x-requested-with
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: JSESSIONID=4DAC92CF2B36A1C578CEE7F10082FB75; Path=/; HttpOnly
+Content-Type: application/json;charset=UTF-8
+Content-Length: 72
+Date: Mon, 14 Sep 2015 07:38:41 GMT
+Connection: close
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: close
+Content-Type: application/json
+Content-Length: 0
+Host: localhost:8080
+User-Agent: Apache-HttpClient/4.2.6 (java 1.5)
+Authorization: Basic YWRtaW46MTIzNDU2
+</requestHeader>
+  <responseData class="java.lang.String">{&quot;_index&quot;:&quot;yy&quot;,&quot;_type&quot;:&quot;group&quot;,&quot;_id&quot;:&quot;testg&quot;,&quot;_version&quot;:21,&quot;found&quot;:true}</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">DELETE</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://localhost:8080/svc/groups/testg</java.net.URL>
+</httpSample>
+<httpSample t="14" it="0" lt="14" ct="5" ts="1442216321763" s="true" lb="删除用户" rc="200" rm="OK" tn="线程组 1-1" dt="text" de="UTF-8" by="525" sc="1" ec="0" ng="1" na="1" hn="XQL-PC">
+  <assertionResult>
+    <name>created</name>
+    <failure>false</failure>
+    <error>false</error>
+    <failureMessage></failureMessage>
+  </assertionResult>
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST,GET,OPTIONS,DELETE,PATCH,MERGE
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: x-requested-with
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: JSESSIONID=6A35BD1319A4A03E6B5049BB403DD60B; Path=/; HttpOnly
+Content-Type: application/json;charset=UTF-8
+Content-Length: 76
+Date: Mon, 14 Sep 2015 07:38:41 GMT
+Connection: close
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: close
+Content-Type: application/json
+Content-Length: 0
+Host: localhost:8080
+User-Agent: Apache-HttpClient/4.2.6 (java 1.5)
+Authorization: Basic YWRtaW46MTIzNDU2
+</requestHeader>
+  <responseData class="java.lang.String">{&quot;_index&quot;:&quot;yy&quot;,&quot;_type&quot;:&quot;user&quot;,&quot;_id&quot;:&quot;wangshushu&quot;,&quot;_version&quot;:21,&quot;found&quot;:true}</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">DELETE</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://localhost:8080/svc/users/wangshushu</java.net.URL>
+</httpSample>
+<httpSample t="745" it="0" lt="745" ct="7" ts="1442216321778" s="true" lb="删除文档类型" rc="200" rm="OK" tn="线程组 1-1" dt="text" de="UTF-8" by="470" sc="1" ec="0" ng="1" na="1" hn="XQL-PC">
+  <assertionResult>
+    <name>acknowledged</name>
+    <failure>false</failure>
+    <error>false</error>
+    <failureMessage></failureMessage>
+  </assertionResult>
+  <responseHeader class="java.lang.String">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST,GET,OPTIONS,DELETE,PATCH,MERGE
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: x-requested-with
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: JSESSIONID=39FA98236922CE4F70F2696110B7F8B0; Path=/; HttpOnly
+Content-Type: application/json;charset=UTF-8
+Content-Length: 21
+Date: Mon, 14 Sep 2015 07:38:42 GMT
+Connection: close
+</responseHeader>
+  <requestHeader class="java.lang.String">Connection: close
+Content-Length: 0
+Content-Type: text/plain; charset=ISO-8859-1
+Host: localhost:8080
+User-Agent: Apache-HttpClient/4.2.6 (java 1.5)
+Authorization: Basic YWRtaW46MTIzNDU2
+</requestHeader>
+  <responseData class="java.lang.String">{&quot;acknowledged&quot;:true}</responseData>
+  <responseFile class="java.lang.String"></responseFile>
+  <cookies class="java.lang.String"></cookies>
+  <method class="java.lang.String">DELETE</method>
+  <queryString class="java.lang.String"></queryString>
+  <java.net.URL>http://localhost:8080/svc/types/jmtest</java.net.URL>
+</httpSample>
+
+</testResults>

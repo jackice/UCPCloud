@@ -1,0 +1,159 @@
+/* CSS Document */
+/* entry */
+.loginbg{ background:#6aabe5 url(images/bg.jpg) repeat !important; }
+.logincar{
+    -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* explorer */
+.mainHeaderBg{ border-bottom:1px solid #cccccc !important;}
+.mainHeader-body, .mainHeader-body .x-panel-body-default{background:#5FA2DD none repeat scroll 0% 0% !important;}
+.main-logo{
+  height: 65px;
+  line-height:65px;
+  font-size: 22px;
+  color: #fff;
+  margin-left: 17px;
+}
+.main-logo img {
+  margin-right: 15px;
+  top: 5px;
+  position: relative;
+}
+.mainHeader-toolbar , .mainHeader-toolbar .x-box-inner , .mainHeader-username{
+  height: 75px !important;
+  line-height:75px;
+  background-color:#D7DDE4 !important;
+}
+.mainHeader-username{
+	padding-right:10px;
+	text-align: right;
+}
+/*#toolbar-1012-innerCt{
+	left:25px;
+}*/
+/*#app-header-1010-innerCt{
+	padding:0 !important;
+}*/
+/*#textfield-1013-triggerWrap{
+	margin-top:15px;
+}*/
+.mainHeader-toolbar-fullText{
+	top: 15px !important;
+	left: 235px !important;
+}
+.mainHeader-toolbar-rightbtn{
+	top:15px !important;
+}
+.mainHeader-toolbar-input .x-form-trigger-wrap{
+	margin-top:15px;
+	padding-right: 10px;
+	background:#fff;
+	border:1px solid #fff;
+	-moz-border-radius: 15px 0 0 15px ;     
+    -webkit-border-radius: 15px 0 0 15px ;       
+    border-radius: 15px 0 0 15px ; 
+}
+.mainHeader-toolbar-input .x-form-trigger-wrap input{
+	-moz-border-radius: 15px 0 0 15px ;     
+    -webkit-border-radius: 15px 0 0 15px ;       
+    border-radius: 15px 0 0 15px ; 
+}
+/*#textfield-1013-triggerWrap, #textfield-1013-inputEl{
+	-moz-border-radius: 15px 0 0 15px ;     
+    -webkit-border-radius: 15px 0 0 15px ;       
+    border-radius: 15px 0 0 15px ;    
+}*/
+/*#textfield-1013-triggerWrap{
+    padding-right: 10px;
+	background:#fff;
+	border:1px solid #fff;
+}*/
+.mainHeader-toolbar-btn{
+	-moz-border-radius: 15px !important;    
+    -webkit-border-radius: 15px !important; 
+    border-radius:15px !important;
+	border:1px solid #7E8E9F !important;
+	background-color:#7E8E9F !important;
+}
+.mainHeader-toolbar-btn:hover{
+	border:1px solid #8A99AA !important;
+	background-color:#8A99AA !important;
+}
+.mainHeader-toolbar-btn.x-btn-focus.x-btn-default-toolbar-small {
+    box-shadow: 0px 1px 0px 0px #6E8298 inset, 0px -1px 0px 0px #6E8298 inset, -1px 0px 0px 0px #6E8298 inset, 1px 0px 0px 0px #6E8298 inset !important;
+}
+.mainHeader-toolbar-btn span{
+	color:#ffffff;
+}
+  
+	
+.x-panel-body-navigation{
+	background-color:#f6f6f6 !important;
+}
+
+/*#tabbar-1020-targetEl .x-tab-focus.x-tab-navigation{
+	outline: 0 solid #5FA2DD;
+	border-left:5px solid #5FA2DD;
+	padding-left:19px;
+}
+#tabbar-1020-targetEl a:hover{
+	background:#545353;
+}
+#tabbar-1020 .x-tab-over.x-tab-navigation .x-tab-inner-navigation {
+    color: #e6e6e6;
+}*/
+.tabbar-menu .x-box-target .x-tab-active.x-tab-navigation{
+	outline: 0 solid #5FA2DD;
+	border-left:5px solid #5FA2DD;
+	padding-left:19px;
+}
+.tabbar-menu .x-box-target a:hover{
+	background:#545353;
+}
+.tabbar-menu .x-tab-over.x-tab-navigation .x-tab-inner-navigation {
+    color: #e6e6e6;
+}
+.x-fieldset {
+    /*border-top: 1px solid rgb(238, 240, 245) !important;*/
+    background: #fff none repeat scroll 0% 0% !important;
+}
+/*.x-fieldset-default {
+    border: 1px solid rgb(238, 240, 245) !important;
+}
+.x-fieldset-header-default > .x-fieldset-header-text {
+    color: #579ddb !important;
+}*/
+/* admin */
+/*#toolbar-1164 , #toolbar-1164-innerCt{
+  height: 75px !important;
+  line-height:75px;
+  background-color:#D7DDE4;
+}*/
+/*#app-header-1162-innerCt{
+	padding:0 !important;
+}*/
+.mainHeader-toolbar-btn.exit{
+	top:15px !important;
+	right:10px !important;
+	left:auto !important;
+}
+/*#tabbar-1167-targetEl .x-tab-focus.x-tab-navigation{
+	outline: 0 solid #5FA2DD;
+	border-left:5px solid #5FA2DD;
+	padding-left:19px;
+}
+#tabbar-1167-targetEl a:hover{
+	background:#545353;
+}
+#tabbar-1167 .x-tab-over.x-tab-navigation .x-tab-inner-navigation {
+    color: #e6e6e6;
+}*/
+.x-tab-icon-el-navigation{
+	font-size:20px !important;
+}
+.x-tab-text.x-tab-icon-left > .x-tab-icon-el-navigation {
+    margin-right: 10px !important;
+}

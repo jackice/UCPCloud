@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<html manifest="">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>文档管理</title>
+    <style media="print">
+        body {
+            margin: 0;
+            background: transparent none;
+        }
+
+        #printContainer > div {
+            position: relative;
+            outline: none;
+            padding: 0;
+            margin: 0;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            page-break-after: always;
+            page-break-inside: avoid;
+            box-sizing: content-box !important;
+        }
+
+        #printContainer canvas {
+            position: static;
+            box-sizing: content-box !important;
+            padding: 0;
+            margin: 0;
+        }
+
+        #printContainer {
+            box-sizing: content-box !important;
+        }
+
+
+    </style>
+    <style media="screen">
+        em {
+            background-color: yellow;
+        }
+
+        #printContainer {
+            display: none;
+        }
+
+        .textLayer {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            opacity: 0.2;
+        }
+
+        .textLayer > div {
+            color: transparent;
+            position: absolute;
+            white-space: pre;
+            cursor: text;
+            -webkit-transform-origin: 0% 0%;
+            -moz-transform-origin: 0% 0%;
+            -o-transform-origin: 0% 0%;
+            -ms-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+        }
+
+        .textLayer ::selection {
+            background: rgb(0, 0, 255);
+        }
+
+        .textLayer ::-moz-selection {
+            background: rgb(0, 0, 255);
+        }
+
+        .annotationLayer .annotLink > a:hover {
+            opacity: 0.2;
+            background: #ff0;
+            box-shadow: 0px 2px 10px #ff0;
+        }
+
+        .annotationLayer .annotText > img {
+            position: absolute;
+            cursor: pointer;
+        }
+
+        .annotationLayer .annotTextContentWrapper {
+            position: absolute;
+            width: 20em;
+        }
+
+        .annotationLayer .annotTextContent {
+            z-index: 200;
+            float: left;
+            max-width: 20em;
+            background-color: #FFFF99;
+            box-shadow: 0px 2px 5px #333;
+            border-radius: 2px;
+            padding: 0.6em;
+            cursor: pointer;
+        }
+
+        .annotationLayer .annotTextContent > h1 {
+            font-size: 1em;
+            border-bottom: 1px solid #000000;
+            padding-bottom: 0.2em;
+        }
+
+        .annotationLayer .annotTextContent > p {
+            padding-top: 0.2em;
+        }
+
+        .annotationLayer .annotLink > a {
+            position: absolute;
+            font-size: 1em;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .annotationLayer .annotLink > a /* -ms-a */           {
+            background: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7") 0 0 repeat;
+        }
+    </style>
+    <script src="../q.js"></script>
+    <script src="../pdfjs-1.1.366-dist/web/compatibility.js"></script>
+    <link rel="resource" type="application/l10n" href="../pdfjs-1.1.366-dist/web/locale/locale.properties"/>
+    <script src="../pdfjs-1.1.366-dist/web/l10n.js"></script>
+    <script src="../pdfjs-1.1.366-dist/build/pdf.mini.js"></script>
+    <script type="text/javascript">
+        var Ext = Ext || {}; // Ext namespace won't be defined yet...
+
+        // This function is called by the Microloader after it has performed basic
+        // device detection. The results are provided in the "tags" object. You can
+        // use these tags here or even add custom tags. These can be used by platform
+        // filters in your manifest or by platformConfig expressions in your app.
+        //
+        Ext.beforeLoad = function (tags) {
+            var s = location.search,  // the query string (ex "?foo=1&bar")
+                    profile;
+
+            // For testing look for "?classic" or "?modern" in the URL to override
+            // device detection default.
+            //
+            if (s.match(/\bclassic\b/)) {
+                profile = 'classic';
+            }
+            else if (s.match(/\bmodern\b/)) {
+                profile = 'modern';
+            }
+            else {
+                profile = tags.desktop ? 'classic' : 'modern';
+                //profile = tags.phone ? 'modern' : 'classic';
+            }
+
+            Ext.manifest = profile; // this name must match a build profile name
+
+            // This function is called once the manifest is available but before
+            // any data is pulled from it.
+            //
+            //return function (manifest) {
+            // peek at / modify the manifest object
+            //};
+        };
+    </script>
+
+
+    <!-- The line below must be kept intact for Sencha Cmd to build your application -->
+    <script id="microloader" data-app="ab93ea99-5367-4cd5-a1ff-583e64fc5ab1" type="text/javascript"
+            src="bootstrap.js"></script>
+
+</head>
+<body></body>
+</html>

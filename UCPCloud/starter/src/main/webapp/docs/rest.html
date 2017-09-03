@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="jquery-2.1.4.min.js"></script>
+    <script src="lodash.min.js"></script>
+    <title></title>
+    <script type="text/javascript">
+        $(function () {
+            $.get("rest.xml").done(function (data) {
+                var $data = $(data);
+                _.each($data.find('httpSample').toArray(), function (sample) {
+                    var $sample = $(sample);
+                    var $div = $("<div></div>");
+                    $('body').append($div);
+                    $div.append('<h1>' + $sample.attr('lb') + '</h1>');
+
+                    var url = $sample.children().filter(function (index, child) {
+                        return child.nodeName === 'java.net.URL';
+                    });
+                    $div.append(div('url', url.get(0)));
+                    var method = $sample.find('method').get(0);
+                    $div.append(div('method', method));
+                    var requestHeader = $sample.find('requestHeader').get(0);
+                    $div.append(div('requestHeader', requestHeader));
+                    var queryString = $sample.find('queryString').get(0);
+                    $div.append(div('queryString', queryString));
+                    var responseHeader = $sample.find('responseHeader').get(0);
+                    $div.append(div('responseHeader', responseHeader));
+                    var responseData = $sample.find('responseData').get(0);
+                    $div.append(div('responseData', responseData));
+                });
+            });
+        });
+
+        function div(title, requestHeader) {
+            var $div = $('<div></div>');
+            $div.append('<h3>' + title + '</h3>');
+            try {
+                var json = JSON.parse(requestHeader.innerHTML);
+                var str = JSON.stringify(json, null, '\t');
+                $div.append('<pre>' + str + '</pre>');
+            } catch (e) {
+                $div.append('<pre>' + requestHeader.innerHTML + '</pre>');
+            }
+            return $div;
+        }
+
+    </script>
+</head>
+
+<body>
+
+
+</body>
+</html>
