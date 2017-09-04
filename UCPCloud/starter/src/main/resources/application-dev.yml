@@ -1,0 +1,53 @@
+udserver:
+  httpPort: 8080 #http端口号
+  httpsPort: 8088 #https端口号
+  sslKeyAlias: server #证书别名
+  keyStorePassword: 1234567890 #证书密码
+  keyStore: server.jks #秘钥库位置
+  keyStoreType: JKS #证书类型
+  trustStore: server.jks #受信任证书
+  trustStorePassword: 1234567890 #受信任证书密码
+  trustStoreType: JKS #受信任证书类型
+  uriEncode: utf-8 #uri编码
+  maxConnections: 2000 #最大连接数
+  maxThreads: 3000 #最大线程数
+  connectionTimeOut: 300000 #连接超时时间
+es:
+  cluster: ucp
+  hosts:
+    - 192.168.11.10:9300
+#    - 192.168.1.91:9300
+  alias: ucp
+  shards: 5
+  replicas: 0
+cer:
+  signCertPath: d:\public\acp_test_sign.pfx
+  signCertPwd: 995595
+  signCertType: PKCS12
+  encryptCertPath: d:\public\acp_test_enc.cer
+  validateCertDir: d:\public
+  signCertDir: true
+fs:
+  type: type =
+   lotsf # local,losf,lotsf,s3
+  root: D:\home\rec
+  blocksize: 2147483648
+cfs:
+  downloadzip: D:\home\zipdownload
+
+fsl:
+  defaultSize: 1048576
+  fslConfigs[0].type: jpg,jpeg
+  fslConfigs[0].size: 1048576
+  fslConfigs[1].type: tif,tiff
+  fslConfigs[1].size: 2097152
+  fslConfigs[2].type: zip
+  fslConfigs[2].size: 2097152
+
+hrb:
+  uploadTempPath: D:\home\zip
+  tempPath: D:\home\datatemp
+
+logging:
+  config: classpath:logback.xml
+  path: D:\home\cfslog\

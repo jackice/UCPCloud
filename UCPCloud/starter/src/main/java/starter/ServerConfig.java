@@ -24,6 +24,10 @@ public class ServerConfig {
     private String keyStorePassword;
     private String keyStore;
     private String keyStoreType;
+    private String trustStore;
+    private String trustStorePassword;
+    private String trustStoreType;
+    @Value("utf-8")
     private String uriEncode;
     @Value("2000")
     private int maxConnections;
@@ -31,6 +35,30 @@ public class ServerConfig {
     private int maxThreads;
     @Value("30000")
     private int connectionTimeOut;
+
+    public String getTrustStore() {
+        return trustStore;
+    }
+
+    public void setTrustStore(String trustStore) {
+        this.trustStore = trustStore;
+    }
+
+    public String getTrustStorePassword() {
+        return trustStorePassword;
+    }
+
+    public void setTrustStorePassword(String trustStorePassword) {
+        this.trustStorePassword = trustStorePassword;
+    }
+
+    public String getTrustStoreType() {
+        return trustStoreType;
+    }
+
+    public void setTrustStoreType(String trustStoreType) {
+        this.trustStoreType = trustStoreType;
+    }
 
     public boolean httpPortIsDefault() {
         if (this.DEFAULT_HTTP_PORT==this.httpPort){

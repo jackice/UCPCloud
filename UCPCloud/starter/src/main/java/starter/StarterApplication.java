@@ -141,14 +141,21 @@ public class StarterApplication extends SpringBootServletInitializer {
         Connector connector = new Connector("org.apache.coyote.http11.Http11NioProtocol");
         Http11NioProtocol protocol = (Http11NioProtocol) connector.getProtocolHandler();
         try {
-            File truststore = new File(config.getKeyStore());
+            File keyStore = new File(config.getKeyStore());
+            File trustStore = new File(config.getTrustStore());
             connector.setScheme("https");
+            protocol.setSslProtocol("TLS");
+            protocol.setClientAuth("true");
             protocol.setSSLEnabled(true);
             connector.setSecure(true);
             System.out.println("setting httpsport:"+config.getHttpsPort());
             connector.setPort(config.getHttpsPort());
-            protocol.setKeystoreFile(truststore.getAbsolutePath());
+            protocol.setTruststoreFile(trustStore.getAbsolutePath());
+            protocol.setTruststorePass(config.getTrustStorePassword());
+            protocol.setTruststoreType(config.getTrustStoreType());
+            protocol.setKeystoreFile(keyStore.getAbsolutePath());
             protocol.setKeystorePass(config.getKeyStorePassword());
+            protocol.setKeystoreType(config.getKeyStoreType());
             protocol.setKeyAlias(config.getSslKeyAlias());
             return connector;
         } catch (Exception ex) {
