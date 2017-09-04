@@ -12,8 +12,8 @@ udserver:
 es:
   cluster: ucp
   hosts:
-#    - 192.168.11.10:9300
-    - 192.168.1.91:9300
+    - 192.168.11.10:9300
+#    - 192.168.1.91:9300
   alias: ucp
   shards: 5
   replicas: 0
