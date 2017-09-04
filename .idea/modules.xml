@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/UCPCloud/UCPCloud.iml" filepath="$PROJECT_DIR$/UCPCloud/UCPCloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UCPCloud/agent/agent.iml" filepath="$PROJECT_DIR$/UCPCloud/agent/agent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UCPCloud/ansj/ansj.iml" filepath="$PROJECT_DIR$/UCPCloud/ansj/ansj.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UCPCloud/starter/starter.iml" filepath="$PROJECT_DIR$/UCPCloud/starter/starter.iml" />
+    </modules>
+  </component>
+</project>
