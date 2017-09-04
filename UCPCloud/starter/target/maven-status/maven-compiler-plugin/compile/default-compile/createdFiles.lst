@@ -45,6 +45,7 @@ starter\rest\Logs.class
 starter\cfsrest\bean\ApiOfRow.class
 starter\security\EsUserDetailsService.class
 starter\cfsrest\rest\CFSStreams.class
+starter\rest\SSLTransaction.class
 starter\service\DownloadSerive.class
 starter\cfsrest\util\FtpUtils.class
 starter\service\TagService.class

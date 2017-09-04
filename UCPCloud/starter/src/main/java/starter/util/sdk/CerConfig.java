@@ -4,7 +4,12 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 /**
- * Created by admin on 2017/9/1.
+ * Modification History:
+ * =============================================================================
+ * Author         Date          Description
+ * ------------ ---------- ---------------------------------------------------
+ * JackIce      2017-09-02      证书工具类
+ * =============================================================================
  */
 @Component
 @ConfigurationProperties(prefix = "cer")

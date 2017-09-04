@@ -43,8 +43,22 @@ public class CerUtil {
     private final static Map<String, KeyStore> certKeyStoreMap = new ConcurrentHashMap<String, KeyStore>();
     static {
         System.out.println("证书正在初始化。。。。。。。。。。");
+        System.out.println(config.toString());
         init();
     }
+
+    public static KeyStore getKeyStore() {
+        return keyStore;
+    }
+
+    public static X509Certificate getEncryptCert() {
+        return encryptCert;
+    }
+
+    public static X509Certificate getValidateCert() {
+        return validateCert;
+    }
+
     /**
      * 初始化所有证书.
      */
@@ -353,6 +367,25 @@ public class CerUtil {
             return null;
         }
         return validateCert.getPublicKey();
+    }
+    public static X509Certificate getValidateCertificate(String certId) {
+        X509Certificate cf = null;
+        if (certMap.containsKey(certId)) {
+            // 存在certId对应的证书对象
+            cf = certMap.get(certId);
+            return cf;
+        } else {
+            // 不存在则重新Load证书文件目录
+            initValidateCertFromDir();
+            if (certMap.containsKey(certId)) {
+                // 存在certId对应的证书对象
+                cf = certMap.get(certId);
+                return cf;
+            } else {
+                logger.error("缺少certId=[" + certId + "]对应的验签证书.");
+                return null;
+            }
+        }
     }
 
     /**
@@ -685,5 +718,30 @@ public class CerUtil {
             return null;
         }
         return getPublicKey(modulus, exponent);
+    }
+    
+    public static boolean verify(X509Certificate certificate,
+                                 byte[] decodedText, final byte[] receivedignature) {
+        /**
+        * method_name: verify
+        * param: [certificate, decodedText, receivedignature]
+        * describe: TODO
+        * creat_user: JackIce
+        * creat_date: 2017/9/4
+        * creat_time: 17:26
+        **/
+        try {
+            Signature signature = Signature.getInstance(certificate
+                    .getSigAlgName());
+            /** 注意这里用到的是证书，实际上用到的也是证书里面的公钥 */
+            signature.initVerify(certificate);
+            signature.update(decodedText);
+            return signature.verify(receivedignature);
+        } catch (NoSuchAlgorithmException | InvalidKeyException
+                | SignatureException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return false;
     }
 }

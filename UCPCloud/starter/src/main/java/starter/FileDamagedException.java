@@ -1,16 +1,15 @@
-import starter.util.sdk.CerUtil;
-
+package starter;
 /**
  * Modification History:
  * =============================================================================
  * Author         Date          Description
  * ------------ ---------- ---------------------------------------------------
- * JackIce   2017-09-01         测试工具类
+ * JackIce   2017-09-04
  * =============================================================================
  */
-public class TestCertUitl {
-    public static void main(String[] args) {
-        String encryptCertId = CerUtil.getEncryptCertId();
-        System.out.println(encryptCertId);
+public class FileDamagedException extends RuntimeException{
+
+    public FileDamagedException(String message) {
+        super(message);
     }
 }

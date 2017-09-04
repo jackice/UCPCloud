@@ -1,6 +1,6 @@
 udserver:
   httpPort: 8080 #http端口号
-  httpsPort: 8088 #https端口号
+  httpsPort: 8443 #https端口号
   sslKeyAlias: server #证书别名
   keyStorePassword: 1234567890 #证书密码
   keyStore: server.jks #秘钥库位置
@@ -21,12 +21,12 @@ es:
   shards: 5
   replicas: 0
 cer:
-  signCertPath: d:\public\acp_test_sign.pfx
-  signCertPwd: 995595
-  signCertType: PKCS12
-  encryptCertPath: d:\public\acp_test_enc.cer
+  signCertPath: d:\public\server.jks
+  signCertPwd: 1234567890
+  signCertType: X.509
+  encryptCertPath: d:\public\custom.cer
   validateCertDir: d:\public
-  signCertDir: true
+  singleMode: true
 fs:
   type: type =
    lotsf # local,losf,lotsf,s3

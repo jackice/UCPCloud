@@ -16,9 +16,9 @@ import java.security.cert.Certificate;
  */
 public class Certifacate {
     private static final String STORE_PASS = "1234567890";
-    private static final String ALIAS = "myCertificate";
-    private static final String KEYSTORE_PATH = "D:\\myKeystore.keystore";
-    private static final String CERT_PATH = "D:\\myCer.cer";
+    private static final String ALIAS = "server";
+    private static final String KEYSTORE_PATH = "D:\\public\\server.jks";
+    private static final String CERT_PATH = "D:\\public\\custom.cer";
     private static final String PLAIN_TEXT = "MANUTD is the most greatest club in the world.";
     /** JDK6只支持X.509标准的证书 */
     private static final String CERT_TYPE = "X.509";
