@@ -87,12 +87,14 @@ public class StarterApplication extends SpringBootServletInitializer {
         System.out.println("设置内嵌tomcat");
         //http 强制跳转到https时需要
 //        TomcatEmbeddedServletContainerFactory tomcat = new TomcatEmbeddedServletContainerFactory() {
-//            SecurityConstraint securityConstraint = new SecurityConstraint();
-//        securityConstraint.setUserConstraint("CONFIDENTIAL");
-//            SecurityCollection collection = new SecurityCollection();
-//        collection.addPattern("/");
-//        securityConstraint.addCollection(collection);
-//        context.addConstraint(securityConstraint);
+//            protected void postProcessContext(Context context) {
+//                SecurityConstraint securityConstraint = new SecurityConstraint();
+//                securityConstraint.setUserConstraint("CONFIDENTIAL");
+//                SecurityCollection collection = new SecurityCollection();
+//                collection.addPattern("/ssl/*");
+//                securityConstraint.addCollection(collection);
+//                context.addConstraint(securityConstraint);
+//            }
 //        };
         TomcatEmbeddedServletContainerFactory tomcat = new TomcatEmbeddedServletContainerFactory();
         tomcat.setUriEncoding(config.getUriEncode());
@@ -102,8 +104,8 @@ public class StarterApplication extends SpringBootServletInitializer {
         tomcat.setPort(config.getHttpPort());
 //        tomcat.addAdditionalTomcatConnectors(httpConnector(config));
         tomcat.addAdditionalTomcatConnectors(createSslConnector(config));
-//        tomcat.addConnectorCustomizers(new StarterApplication.MyTomcatConnectorCustomizer(config.getMaxConnections(),
-//                config.getMaxThreads(),config.getConnectionTimeOut()));
+        tomcat.addConnectorCustomizers(new StarterApplication.MyTomcatConnectorCustomizer(config.getMaxConnections(),
+                config.getMaxThreads(),config.getConnectionTimeOut()));
         return tomcat;
     }
     class MyTomcatConnectorCustomizer implements TomcatConnectorCustomizer
@@ -114,7 +116,7 @@ public class StarterApplication extends SpringBootServletInitializer {
 
         public MyTomcatConnectorCustomizer(int maxConnections, int maxThreads, int connectionTimeOut) {
             this.maxConnections = maxConnections;
-            maxThreads = maxThreads;
+            this.maxThreads = maxThreads;
             this.connectionTimeOut = connectionTimeOut;
         }
 
@@ -122,7 +124,6 @@ public class StarterApplication extends SpringBootServletInitializer {
         {
             Http11NioProtocol protocol = (Http11NioProtocol) connector.getProtocolHandler();
             //设置最大连接数
-            System.out.println("setting maxconnection:"+this.maxConnections);
             protocol.setMaxConnections(this.maxConnections);
             //设置最大线程数
             protocol.setMaxThreads(this.maxThreads);
@@ -131,24 +132,30 @@ public class StarterApplication extends SpringBootServletInitializer {
     }
     private Connector createSslConnector(ServerConfig config) {
         /**
-        * method_name: createSslConnector
-        * param: [config]
-        * describe: TODO
-        * creat_user: JackIce
-        * creat_date: 2017/9/3
-        * creat_time: 1:33
-        **/
+         * method_name: createSslConnector
+         * param: [config]
+         * describe: TODO
+         * creat_user: JackIce
+         * creat_date: 2017/9/3
+         * creat_time: 1:33
+         **/
         Connector connector = new Connector("org.apache.coyote.http11.Http11NioProtocol");
         Http11NioProtocol protocol = (Http11NioProtocol) connector.getProtocolHandler();
         try {
-            File truststore = new File(config.getKeyStore());
+            File keyStore = new File(config.getKeyStore());
+            File trustStore = new File(config.getTrustStore());
             connector.setScheme("https");
+            protocol.setSslProtocol("TLS");
+            protocol.setClientAuth("true");
             protocol.setSSLEnabled(true);
             connector.setSecure(true);
-            System.out.println("setting httpsport:"+config.getHttpsPort());
             connector.setPort(config.getHttpsPort());
-            protocol.setKeystoreFile(truststore.getAbsolutePath());
+            protocol.setTruststoreFile(trustStore.getAbsolutePath());
+            protocol.setTruststorePass(config.getTrustStorePassword());
+            protocol.setTruststoreType(config.getTrustStoreType());
+            protocol.setKeystoreFile(keyStore.getAbsolutePath());
             protocol.setKeystorePass(config.getKeyStorePassword());
+            protocol.setKeystoreType(config.getKeyStoreType());
             protocol.setKeyAlias(config.getSslKeyAlias());
             return connector;
         } catch (Exception ex) {
@@ -158,17 +165,16 @@ public class StarterApplication extends SpringBootServletInitializer {
 
     private Connector httpConnector(ServerConfig config){
         /**
-        * method_name: httpConnector
-        * param: [config]
-        * describe: 转发端口
-        * creat_user: JackIce
-        * creat_date: 2017/9/3
-        * creat_time: 1:34
-        **/
+         * method_name: httpConnector
+         * param: [config]
+         * describe: 转发端口
+         * creat_user: JackIce
+         * creat_date: 2017/9/3
+         * creat_time: 1:34
+         **/
         Connector connector = new Connector("org.apache.coyote.http11.Http11NioProtocol");
         connector.setScheme("http");
-        connector.setPort(config.getHttpPort());
-        System.out.println("setting httpport:"+config.getHttpPort());
+//        connector.setPort(config.getHttpPort());
         connector.setRedirectPort(config.getHttpsPort());
         connector.setSecure(false);
         return connector;

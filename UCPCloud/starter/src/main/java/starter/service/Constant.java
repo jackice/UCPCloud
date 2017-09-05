@@ -72,7 +72,7 @@ public class Constant {
     public static final String LOG_TYPE_NAME = "logInfo";
     public static final String LOG_INDDX_NAME = "ucp_log";
 
-
+    public static final String SUGNATURE = "signature";
     /**
      * ES中mapping定义相关字段名称
      */
