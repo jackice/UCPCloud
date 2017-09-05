@@ -24,7 +24,7 @@ cer:
   signCertPath: d:\public\server.jks
   signCertPwd: 1234567890
   signCertType: X.509
-  encryptCertPath: d:\public\custom.cer
+  encryptCertPath: d:\public\client.crt
   validateCertDir: d:\public
   singleMode: true
 fs:
