@@ -25,9 +25,11 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.multipart.support.MultipartFilter;
+import starter.certs.Certifacate;
 import starter.service.fs.FileSystem;
 import starter.service.fs.FileSystemFactory;
 import starter.service.fs.FsConfig;
+import starter.util.sdk.CerConfig;
 
 import java.io.File;
 import java.net.InetSocketAddress;
@@ -57,6 +59,14 @@ public class StarterApplication extends SpringBootServletInitializer {
     public FileSystem fileSystem(Client client, FsConfig fsConfig) {
         FileSystemFactory fileSystemFactory = new FileSystemFactory(client);
         return fileSystemFactory.newFileSystem(fsConfig);
+    }
+
+    @Bean
+    public Certifacate initCertifacate(CerConfig cerConfig){
+        Certifacate certifacate = new Certifacate(cerConfig);
+        certifacate.init();
+        System.out.println("init..."+certifacate.getEncryptCertPublicKey().toString());
+        return certifacate;
     }
 
     @Bean

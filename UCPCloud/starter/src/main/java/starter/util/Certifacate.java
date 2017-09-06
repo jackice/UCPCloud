@@ -18,32 +18,35 @@ public class Certifacate {
     private static final String STORE_PASS = "1234567890";
     private static final String ALIAS = "server";
     private static final String KEYSTORE_PATH = "D:\\public\\server.jks";
-    private static final String CERT_PATH = "D:\\public\\custom.cer";
+    private static final String CERT_PATH = "D:\\public\\server.cer";
     private static final String PLAIN_TEXT = "MANUTD is the most greatest club in the world.";
     /** JDK6只支持X.509标准的证书 */
     private static final String CERT_TYPE = "X.509";
 
-//    public static void main(String[] args) throws IOException {
-//        /**
-//         * 假设现在有这样一个场景 。A机器上的数据，需要加密导出，然后将导出文件放到B机器上导入。 在这个场景中，A相当于服务器，B相当于客户端
-//         */
-//
-//        /** A */
+    public static void main(String[] args) throws IOException {
+        /**
+         * 假设现在有这样一个场景 。A机器上的数据，需要加密导出，然后将导出文件放到B机器上导入。 在这个场景中，A相当于服务器，B相当于客户端
+         */
+
+        /** A */
 //        KeyStore keyStore = getKeyStore(STORE_PASS, KEYSTORE_PATH);
 //        PrivateKey privateKey = getPrivateKey(keyStore, ALIAS, STORE_PASS);
 //        X509Certificate certificate = getCertificateByKeystore(keyStore, ALIAS);
 //        /** 加密和签名 */
 //        byte[] encodedText = encode(PLAIN_TEXT.getBytes(), privateKey);
+//        System.out.println(encodedText.toString());
+//        System.out.println(PLAIN_TEXT);
 //        byte[] signature = sign(certificate, privateKey, PLAIN_TEXT.getBytes());
-//
+//        System.out.println("signature:"+signature.toString());
 //        /** 现在B收到了A的密文和签名，以及A的可信任证书 */
 //        X509Certificate receivedCertificate = getCertificateByCertPath(
 //                CERT_PATH, CERT_TYPE);
 //        PublicKey publicKey = getPublicKey(receivedCertificate);
 //        byte[] decodedText = decode(encodedText, publicKey);
+//        System.out.println("decodedText:"+decodedText.toString());
 //        System.out.println("Signature is : "
 //                + verify(receivedCertificate, decodedText, signature));
-//    }
+    }
 
     /**
      * 加载密钥库，与Properties文件的加载类似，都是使用load方法
@@ -54,6 +57,7 @@ public class Certifacate {
             throws IOException {
         InputStream inputStream = null;
         try {
+            System.out.println(KeyStore.getDefaultType());
             KeyStore keyStore = KeyStore.getInstance(KeyStore.getDefaultType());
             inputStream = new FileInputStream(keystorePath);
             keyStore.load(inputStream, storepass.toCharArray());
