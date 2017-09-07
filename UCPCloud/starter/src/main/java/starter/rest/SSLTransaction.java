@@ -33,7 +33,7 @@ public class SSLTransaction {
     @RequestMapping(value = "/{type}", method = RequestMethod.POST, consumes = "multipart/*", produces = MediaType.ALL_VALUE)
     public String create(@PathVariable String type, MultipartHttpServletRequest request) {
         try {
-            MultipartParser parser = new MultipartParser(request).invoke(fileSizeLimit);
+            SSLMultipartParser parser = new SSLMultipartParser(request).invoke(fileSizeLimit);
             XContentBuilder result = sslDocumentService.sslCreate(type, parser.getBody(), parser.getFiles());
             return result.string();
         } catch (Exception e) {

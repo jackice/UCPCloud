@@ -59,6 +59,7 @@ starter\service\hrbb\HrbbFile.class
 starter\cfsrest\util\DownLoadUtils.class
 starter\EsConfig.class
 starter\service\hrbb\Cache.class
+starter\service\SSLDocuentService.class
 starter\cfsrest\rest\AnalysisURL.class
 starter\cfsrest\bean\Constant$DeleteApiResponse.class
 starter\ServerConfig.class
@@ -79,6 +80,7 @@ starter\rest\Systems.class
 starter\service\ReIndexService$ReindexJob.class
 starter\service\ReIndexConfig.class
 starter\security\SecurityConfiguration$HttpStatusAndJsonEntryPoint.class
+starter\rest\SSLMultipartParser.class
 starter\service\ReIndexService$ReindexJob$2.class
 starter\cfsrest\util\CommonUtils.class
 starter\cfsrest\bean\ApiOfResponse.class
@@ -89,7 +91,9 @@ starter\service\Constant$Type.class
 starter\cfsrest\util\CompressZip.class
 starter\RequestContext.class
 starter\service\fs\lotsf\TypedBlockFileWriter.class
+starter\certs\Certifacate$CerFilter.class
 starter\cfsrest\service\ZipOutStream.class
+starter\FileDamagedException.class
 starter\service\Constant.class
 starter\cfsrest\bean\CFSLogBean.class
 starter\service\fs\FileSystemFactory.class
@@ -97,6 +101,7 @@ starter\cfsrest\rest\PrintCode.class
 starter\service\fs\lotsf\TypedBlockFileSystem.class
 starter\service\hrbb\HrbbService.class
 starter\StarterApplication.class
+starter\util\Base64.class
 starter\cfsrest\factory\MsgBundleFactory.class
 starter\cfsrest\rest\SpecialTreeData.class
 starter\util\sdk\CerConfig.class
@@ -111,6 +116,7 @@ starter\cfsrest\bean\DeleteApiOfResponseOfMessage.class
 starter\cfsrest\bean\ResponseMessageBean.class
 starter\util\sdk\SDKConstants.class
 starter\security\SecurityConfiguration$1.class
+starter\certs\Certifacate.class
 starter\cfsrest\util\ZipUtil.class
 starter\cfsrest\bean\Constant.class
 starter\rest\converts\TypeConverter.class

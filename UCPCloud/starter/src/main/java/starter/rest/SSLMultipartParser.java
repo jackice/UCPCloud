@@ -2,14 +2,18 @@ package starter.rest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import starter.FileDamagedException;
 import starter.FileSizeLimit;
 import starter.FileSizeLimitConfig;
+import starter.certs.Certifacate;
 import starter.service.Constant;
-import starter.util.Certifacate;
-import starter.util.sdk.CerUtil;
+import starter.util.Base64;
+import starter.util.sdk.CerConfig;
 
 import javax.naming.LimitExceededException;
 import java.io.IOException;
@@ -21,9 +25,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import static starter.util.Certifacate.getCertificateByCertPath;
-
 public class SSLMultipartParser {
 	private MultipartHttpServletRequest request;
 	private Json body;
@@ -60,11 +61,15 @@ public class SSLMultipartParser {
 		files = new ArrayList<>();
 		Map<String, String[]> parameterMap = request.getParameterMap();
 		String signature = null;
+		String CID= null;
 		for (String key : parameterMap.keySet()) {
 			if (key.equals("tag")) {
 				body.put(key, parameterMap.get(key));
 			}else if (key.equals(Constant.SUGNATURE)){
 				signature = parameterMap.get(key)[0];
+			}else if (key.equals(Constant.CID)||key.equals(Constant.CID.toUpperCase())){
+				CID = parameterMap.get(key)[0];
+				body.put(key,CID);
 			}
 			else {
 				body.put(key, parameterMap.get(key)[0]);
@@ -82,16 +87,17 @@ public class SSLMultipartParser {
 				}
 				//验证文件签名
 				try {
-					X509Certificate validateCert = CerUtil.getValidateCert();
-					if (!CerUtil.verify(validateCert,file.getBytes(),signature.getBytes())){
+					X509Certificate validateCert = Certifacate.getValidateCertificate(CID);
+					logger.info(String.format("CID:%sclient signature is:%s",validateCert.getSerialNumber(),signature));
+					if (!Certifacate.verify(validateCert,file.getBytes(), Base64.decodeToBytes(signature))){
 						logger.error(String.format("%s digital signature verify fail,%s may have been damaged!%s signature is:%s",
 								file.getName(),file.getName(),file.getName(),signature));
 						throw new FileDamagedException(String.format("%s digital signature verify fail,%s may have been damaged!",file.getName(),file.getName()));
 					}else{
 						//对文件进行签名
-						X509Certificate encryptCert = CerUtil.getEncryptCert();
-						KeyStore keyStore = CerUtil.getKeyStore();
-						PrivateKey signCertPrivateKey = CerUtil.getSignCertPrivateKey();
+						X509Certificate encryptCert = Certifacate.getEncryptCert();
+						KeyStore keyStore = Certifacate.getKeyStore();
+						PrivateKey signCertPrivateKey = Certifacate.getSignCertPrivateKey();
 						byte[] fileSign= Certifacate.sign(encryptCert, signCertPrivateKey, file.getBytes());
 						logger.info(String.format("Server signature is :%s",fileSign));
 						body.put(Constant.SUGNATURE,fileSign);

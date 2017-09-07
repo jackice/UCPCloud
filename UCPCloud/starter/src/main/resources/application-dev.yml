@@ -5,7 +5,7 @@ udserver:
   keyStorePassword: 1234567890 #证书密码
   keyStore: server.jks #秘钥库位置
   keyStoreType: JKS #证书类型
-  trustStore: server.jks #受信任证书
+  trustStore: server.truststore #受信任证书
   trustStorePassword: 1234567890 #受信任证书密码
   trustStoreType: JKS #受信任证书类型
   uriEncode: utf-8 #uri编码
@@ -23,13 +23,12 @@ es:
 cer:
   signCertPath: d:\public\server.jks
   signCertPwd: 1234567890
-  signCertType: X.509
-  encryptCertPath: d:\public\client.crt
+  signCertType: JKS
+  encryptCertPath: d:\public\client.cer
   validateCertDir: d:\public
   singleMode: true
 fs:
-  type: type =
-   lotsf # local,losf,lotsf,s3
+  type: lotsf # local,losf,lotsf,s3
   root: D:\home\rec
   blocksize: 2147483648
 cfs:

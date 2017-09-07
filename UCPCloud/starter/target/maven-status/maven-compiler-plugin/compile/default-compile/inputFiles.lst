@@ -3,6 +3,7 @@ D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\security\EsUs
 D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\util\BaseHttpSSLSocketFactory.java
 D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\util\sdk\CerUtil.java
 D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\rest\Documents.java
+D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\FileDamagedException.java
 D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\StarterApplication.java
 D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\EsConfig.java
 D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\cfsrest\rest\AnalysisURL.java
@@ -15,6 +16,7 @@ D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\rest\Multipar
 D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\service\TypeService.java
 D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\uContentException.java
 D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\cfsrest\factory\ItemFactory.java
+D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\util\Base64.java
 D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\cfsrest\bean\ResponseOfMessage.java
 D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\rest\hrbb\HrbbRest.java
 D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\service\fs\losf\BlockFileReader.java
@@ -31,6 +33,7 @@ D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\cfsrest\util\
 D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\service\fs\lotsf\TypedBlockFileWriter.java
 D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\cfsrest\bean\AuthorityConfig.java
 D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\cfsrest\util\SimulatorDataReader.java
+D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\certs\Certifacate.java
 D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\cfsrest\bean\ApiOfResponseLists.java
 D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\service\Constant.java
 D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\service\hrbb\HrbbFile.java
@@ -41,6 +44,8 @@ D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\service\ReInd
 D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\util\HttpClient.java
 D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\LogAspect.java
 D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\FileSizeLimitConfig.java
+D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\rest\SSLMultipartParser.java
+D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\rest\SSLTransaction.java
 D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\cfsrest\bean\DeleteApiOfResponse.java
 D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\rest\Download.java
 D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\cfsrest\util\CFSXMLParseUtils.java
@@ -101,6 +106,7 @@ D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\rest\converts
 D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\cfsrest\bean\DeleteApiOfResponseOfMessage.java
 D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\service\StreamService.java
 D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\util\Certifacate.java
+D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\service\SSLDocuentService.java
 D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\util\sdk\CerConfig.java
 D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\cfsrest\bean\ApiOfResponseOfMessage.java
 D:\github_ucontent\UCPCloud\UCPCloud\starter\src\main\java\starter\cfsrest\rest\CFSImgFileRest.java
