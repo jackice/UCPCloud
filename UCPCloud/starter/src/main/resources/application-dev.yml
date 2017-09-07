@@ -28,8 +28,7 @@ cer:
   validateCertDir: d:\public
   singleMode: true
 fs:
-  type: type =
-   lotsf # local,losf,lotsf,s3
+  type: lotsf # local,losf,lotsf,s3
   root: D:\home\rec
   blocksize: 2147483648
 cfs:

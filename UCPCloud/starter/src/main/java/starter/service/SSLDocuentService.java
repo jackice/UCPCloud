@@ -489,6 +489,9 @@ public class SSLDocuentService {
             if(key.equals(Constant.SUGNATURE)){
                 continue;
             }
+            if (key.equals(Constant.CID)||key.equals(Constant.CID.toUpperCase())){
+                continue;
+            }
             if (!keySet.contains(key)) {//ignore undefined property
                 iterator.remove();
                 continue;

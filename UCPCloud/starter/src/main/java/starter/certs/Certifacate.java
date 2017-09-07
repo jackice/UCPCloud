@@ -235,7 +235,7 @@ public class Certifacate {
      * 从指定目录下加载验证签名证书
      *
      */
-    private  void initValidateCertFromDir() {
+    private static void initValidateCertFromDir() {
         certMap.clear();
         String dir = config.getValidateCertDir();
         logger.info(String.format("加载验证签名证书目录==>%s",dir));
@@ -421,7 +421,7 @@ public class Certifacate {
         }
         return validateCert.getPublicKey();
     }
-    public  X509Certificate getValidateCertificate(String certId) {
+    public static X509Certificate getValidateCertificate(String certId) {
         X509Certificate cf = null;
         if (certMap.containsKey(certId)) {
             // 存在certId对应的证书对象
@@ -651,7 +651,7 @@ public class Certifacate {
      * 证书文件过滤器
      *
      */
-     class CerFilter implements FilenameFilter {
+    static class CerFilter implements FilenameFilter {
         public boolean isCer(String name) {
             if (name.toLowerCase().endsWith(".cer")) {
                 return true;
@@ -726,7 +726,7 @@ public class Certifacate {
      *
      * @return
      */
-    public  Map<String, X509Certificate> getCertMap() {
+    public static Map<String, X509Certificate> getCertMap() {
         return certMap;
     }
 

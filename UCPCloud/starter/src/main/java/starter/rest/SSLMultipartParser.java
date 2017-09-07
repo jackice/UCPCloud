@@ -61,11 +61,15 @@ public class SSLMultipartParser {
 		files = new ArrayList<>();
 		Map<String, String[]> parameterMap = request.getParameterMap();
 		String signature = null;
+		String CID= null;
 		for (String key : parameterMap.keySet()) {
 			if (key.equals("tag")) {
 				body.put(key, parameterMap.get(key));
 			}else if (key.equals(Constant.SUGNATURE)){
 				signature = parameterMap.get(key)[0];
+			}else if (key.equals(Constant.CID)||key.equals(Constant.CID.toUpperCase())){
+				CID = parameterMap.get(key)[0];
+				body.put(key,CID);
 			}
 			else {
 				body.put(key, parameterMap.get(key)[0]);
@@ -83,8 +87,8 @@ public class SSLMultipartParser {
 				}
 				//验证文件签名
 				try {
-					X509Certificate validateCert = Certifacate.getValidateCert();
-					logger.info(String.format("CID:%--sclient signature is:%s",validateCert.getSerialNumber(),signature));
+					X509Certificate validateCert = Certifacate.getValidateCertificate(CID);
+					logger.info(String.format("CID:%sclient signature is:%s",validateCert.getSerialNumber(),signature));
 					if (!Certifacate.verify(validateCert,file.getBytes(), Base64.decodeToBytes(signature))){
 						logger.error(String.format("%s digital signature verify fail,%s may have been damaged!%s signature is:%s",
 								file.getName(),file.getName(),file.getName(),signature));

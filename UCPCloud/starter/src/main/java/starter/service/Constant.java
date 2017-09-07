@@ -73,6 +73,7 @@ public class Constant {
     public static final String LOG_INDDX_NAME = "ucp_log";
 
     public static final String SUGNATURE = "signature";
+    public static final String CID= "cid";
     /**
      * ES中mapping定义相关字段名称
      */
